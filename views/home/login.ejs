@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Login cube-a</title>
+  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+
+  <script src="css/components/jquery.min.js"></script>
+  <script src="css/components/form.min.js"></script>
+  <script src="css/components/transition.min.js"></script>
+  <script src="css/semantic.min.js"></script>
+  <script src="login.js" defer></script>
+
+  <style type="text/css">
+    body {
+      background-color: #DADADA;
+    }
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+  </style>
+  <script>
+    /*  $(document)
+    .ready(function() {
+      $('.ui.form')
+        .form({
+          fields: {
+            id: {
+              identifier  : 'id',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'ID를 입력하세요.'
+                }
+              ]
+            },
+            password: {
+              identifier  : 'password',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : '비밀번호를 입력하세요.'
+                }
+              ]
+            }
+          }
+        });
+      });*/
+  </script>
+</head>
+<body>
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui teal image header">
+      <img src="image/accdt.png" class="image">
+      <div class="content">
+        CUBE-A 로그인
+      </div>
+    </h2>
+    <form class="ui large form">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" id="id" placeholder="ID를 입력하세요.">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" id="password" placeholder="비밀번호를 입력하세요.">
+          </div>
+        </div>
+        <!--<div class="ui fluid large blue submit button">로그인</div>-->
+        <span id = "loginBtn" class="ui fluid large blue submit button" >로그인
+        </span>
+      <div class="ui error message"></div>
+    </form>
+    <div class="text-center">
+      <small>Copyright CUBETECH Corp. All Right Reserved.</small>
+    </div>
+  </div>
+</div>
+</div>
+<!-- 상단 선언 시 클래스를 가져오지 못해서 하단 선언함.-->
+</body>
+</html>
+
