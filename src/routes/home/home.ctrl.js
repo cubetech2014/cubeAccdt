@@ -1,4 +1,6 @@
+//const { response } = require("express");
 const logFile = require("../../public/js/home/log");
+const UserStorage = require("../../models/UserStorage");
 
 const output = {
   login: (req,res) => {
@@ -14,32 +16,26 @@ const output = {
   },
 };
 
-const users = {
-  id: ["123", "234"],
-  pw: ["123", "234"],
-};
-
 const process = {
   login: (req, res) => {
     const id = req.body.id,
           pw = req.body.pw;
-    
-    if (users.id.includes(id)) {
-      const idx = users.id.indexOf(id);
-      if (users.pw[idx] === pw) {
-        return res.json({
-          success: true,
-        });
-      }
-    }
-    return res.json({
-      success: false,
-      msg: `로그인에 실패하였습니다. \n아이디 혹은 비밀번호를 확인하세요.`
-    });
+    console.log(UserStorage.getUsers("id", "pw"));
+    const response = {};
+    // if (users.id.includes(id)) {
+    //   const idx = users.id.indexOf(id);
+    //   if (users.pw[idx] === pw) {
+    //     response.success = true;
+    //     return res.json(response);        
+    //   }
+    // }
+
+    response.success = false;
+    response.msg = `로그인에 실패하였습니다. \n아이디 혹은 비밀번호를 확인하세요.`    
+    return res.json(response);
     //console.log(req.body);
   },
 }
-  
   
 module.exports = {
     output,
