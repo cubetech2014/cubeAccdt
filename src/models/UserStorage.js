@@ -11,6 +11,7 @@ class UserStorage {
     };    
 
     static getUsers(...fields){
+        //return this.#users;
         const users = this.#users;
         const newUsers = fields.reduce((newUsers, field) => {
             if (users.hasOwnProperty(field)) {
@@ -18,7 +19,7 @@ class UserStorage {
             }
             return newUsers;
         }, {});        
-        return;
+        return newUsers;
     }
 };
   
